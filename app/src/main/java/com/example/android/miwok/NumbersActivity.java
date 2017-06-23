@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -54,7 +55,7 @@ public class NumbersActivity extends AppCompatActivity {
         Log.v("NumbersActivity", "words at index 9: " + words.get(9));*/
 
         // Find the root view so we can add child views to it
-       GridView rootView = (GridView) findViewById(R.id.grid);
+       ListView rootView = (ListView) findViewById(R.id.list);
 
        /* A While loop
        *Create a variable to keep track of the current index position
@@ -79,9 +80,9 @@ public class NumbersActivity extends AppCompatActivity {
             for (int index = 0; index < words.size(); index ++)
             { ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
 
-                GridView GridView = (GridView) findViewById(R.id.grid);
+                GridView gridView = (GridView) findViewById(R.id.list);
 
-                GridView.setAdapter(itemsAdapter);
+                gridView.setAdapter(itemsAdapter);
 
             }
         }

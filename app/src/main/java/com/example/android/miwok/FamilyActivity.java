@@ -45,7 +45,7 @@ public class FamilyActivity extends AppCompatActivity {
         // Create an {@link AndroidFlavorAdapter}, whose data source is a list of
         // {@link AndroidFlavor}s. The adapter knows how to create list item views for each item
         // in the list.
-        WordAdapter adapter = new WordAdapter(this, words);
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_family);
 
 
         // Get a reference to the ListView, and attach the adapter to the listView.

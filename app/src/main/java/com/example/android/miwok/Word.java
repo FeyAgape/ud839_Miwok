@@ -1,5 +1,5 @@
 package com.example.android.miwok;
-//My own class
+
 /**
  * Created by FEY-AGAPE on 23/06/2017.
  */

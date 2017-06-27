@@ -18,7 +18,13 @@ public class Word {
     private String mMiwokTranslation;
 
     // Drawable resource ID
-    private int mImageResourceId;
+
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    /**
+     * Constant value that represents no image was provided for this word
+     */
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -26,7 +32,7 @@ public class Word {
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
-     * @param imageResourceId is drawable reference ID that corresponds to the Android version
+     * @param imageResourceId    is drawable reference ID that corresponds to the Android version
      */
     //first constructor for the colors, numbers and family which takes on 2 string and 1 image
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
@@ -36,7 +42,7 @@ public class Word {
     }
     //second constructor for the phrase which only takes on 2 string no image
 
-    public Word(String defaultTranslation, String miwokTranslation ) {
+    public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
 
@@ -61,6 +67,13 @@ public class Word {
      */
     public int getImageResourceId() {
         return mImageResourceId;
+    }
+
+    /**
+     * Returns whether or not there is an image for this word.
+     */
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }
 

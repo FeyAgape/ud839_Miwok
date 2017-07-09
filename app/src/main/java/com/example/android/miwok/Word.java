@@ -17,6 +17,9 @@ public class Word {
      */
     private String mMiwokTranslation;
 
+    /** Audio resource ID for the word */
+     private int mAudioResourceId;
+
     // Drawable resource ID
 
     private int mImageResourceId = NO_IMAGE_PROVIDED;
@@ -32,20 +35,23 @@ public class Word {
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
+     *  @param audioResourceId is the resource ID for the audio file associated with this word
      * @param imageResourceId    is drawable reference ID that corresponds to the Android version
      */
-    //first constructor for the colors, numbers and family which takes on 2 string and 1 image
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    //First constructor for the colors, numbers and family which takes on 2 string and 1 image
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
-    //second constructor for the phrase which only takes on 2 string no image
+    //Second constructor for the phrase which only takes on 2 string no image
 
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -75,5 +81,13 @@ public class Word {
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
+
+    /**
+      * Return the audio resource ID of the word.
+      */
+            public int getAudioResourceId() {
+               return mAudioResourceId;
+           }
 }
 
